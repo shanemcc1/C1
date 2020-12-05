@@ -19,6 +19,6 @@ export class EpisodeComponent {
     this.episode = response;
   }
   */
-  episode: any;
+  episode;
 }
 
