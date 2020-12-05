@@ -7,7 +7,7 @@ import { EpisodesComponent} from './episodes.component';
 import { WebService} from './web.service';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent} from './home.component';
-import { EpisodeComponent} from './episode.comonent';
+import { EpisodeComponent} from './episode.component';
 
 var routes = [
   {
@@ -26,7 +26,7 @@ var routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent, EpisodesComponent
+    AppComponent, EpisodesComponent, EpisodeComponent, HomeComponent
   ],
   imports: [
     BrowserModule,

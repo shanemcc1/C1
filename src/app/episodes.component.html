@@ -7,8 +7,8 @@
     <div class="col-sm-12">
       <div *ngFor="let episode of episode_list">
         <div class = "card text-white bg-primary mb-3"
-        [routerLink]="['/episodes', episode._id]"
-        style = "cursor: pointer">
+              [routerLink] = "['/gameofthrones', episode._id]"
+          style = "cursor: pointer">
           <div class="card-header">
             {{episode.name}}
           </div>
