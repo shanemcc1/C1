@@ -10,13 +10,8 @@ export class EpisodesComponent {
   constructor(public webService: WebService) {}
 
    ngOnInit() {
-    this.webService.getEpisodes();
-    this.webService.episode_list.subscribe(
-      episodes => {
-        this.episode_list = episodes;
-      }
-    );
-
+    this.webService.getEpisodes(this.page);
   }
-  episode_list: any;
+  episode_list;
+  page = 1;
 }

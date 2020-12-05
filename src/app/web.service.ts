@@ -9,9 +9,9 @@ export class WebService{
   episode_list = this.episodesSubject.asObservable();
 
   constructor(private http: HttpClient) {}
-  getEpisodes()
+  getEpisodes(page)
   {
-    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones').subscribe(response => {
+    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page).subscribe(response => {
       this.episode_private_list = response;
       this.episodesSubject.next(this.episode_private_list);
     });

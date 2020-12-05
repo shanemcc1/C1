@@ -18,6 +18,6 @@ export class EpisodeComponent {
     this.episode = response;
   }
   */
-  episode;
+  episode: any;
 }
 
