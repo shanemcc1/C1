@@ -11,6 +11,11 @@ export class EpisodesComponent {
 
    ngOnInit() {
     this.webService.getEpisodes();
+    this.webService.episodesSubject.subscribe(
+      episodes => {
+        this.episode_list = episodes;
+      }
+    );
 
   }
   episode_list: any;
