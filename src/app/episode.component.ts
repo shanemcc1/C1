@@ -8,7 +8,6 @@ import { ActivatedRoute} from '@angular/router';
   styleUrls: ['./episode.component.css']
 })
 
-
 export class EpisodeComponent {
   constructor(private webService: WebService,
               private route: ActivatedRoute) {}

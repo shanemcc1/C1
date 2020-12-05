@@ -18,5 +18,5 @@ export class EpisodesComponent {
     );
 
   }
-  episode_list;
+  episode_list: any;
 }
