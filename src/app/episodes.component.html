@@ -5,7 +5,7 @@
 <div class ="container">
   <div class = "row">
     <div class="col-sm-12">
-      <div *ngFor="let episode of episode_list">
+      <div *ngFor="let episode of webService.episode_list">
         <div class = "card text-white bg-primary mb-3"
               [routerLink] = "['/gameofthrones', episode._id]"
           style = "cursor: pointer">
@@ -18,7 +18,6 @@
           <div class="card-header">
             This episodes airdate: {{episode.airdate}}
           </div>
-
         </div>
       </div>
   </div>

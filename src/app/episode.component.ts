@@ -12,11 +12,13 @@ import { ActivatedRoute} from '@angular/router';
 export class EpisodeComponent {
   constructor(private webService: WebService,
               private route: ActivatedRoute) {}
-
+/*
   async ngOnInit() {
     var response = await this.webService.getEpisode(
       this.route.snapshot.params.id);
     this.episode = response;
   }
+  */
   episode: any;
 }
+

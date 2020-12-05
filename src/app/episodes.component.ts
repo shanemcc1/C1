@@ -7,11 +7,11 @@ import { WebService } from './web.service';
   styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent {
-  constructor(private webService: WebService) {}
+  constructor(public webService: WebService) {}
 
-  async ngOnInit() {
-    var response = await this.webService.getEpisodes();
-    this.episode_list = response;
+   ngOnInit() {
+    this.webService.getEpisodes();
+
   }
   episode_list: any;
 }
