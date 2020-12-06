@@ -16,6 +16,8 @@ export class WebService{
   reviewsSubject = new Subject();
   reviews_list = this.reviewsSubject.asObservable();
 
+  episodeID;
+
 
   constructor(private http: HttpClient) {}
   getEpisodes(page)
@@ -30,7 +32,7 @@ export class WebService{
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id).subscribe(response => {
       this.episode_private_list = [response];
-      console.log([response]);
+      this.episodeID = id;
       this.episodeSubject.next(this.episode_private_list);
     });
   }
@@ -41,5 +43,26 @@ export class WebService{
       this.reviews_private_list = response;
       this.reviewsSubject.next(this.reviews_private_list);
     });
+  }
+
+  postReview(review){
+    let postData = new FormData();
+    postData.append('username', review.username);
+    postData.append("comment", review.comment);
+    postData.append("stars", review.stars);
+
+    let today = new Date();
+    let todayDate = today.getFullYear() + '-' +
+                    today.getMonth() +
+                    today.getDate();
+
+    postData.append("date", todayDate);
+
+    this.http.post('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews', postData).subscribe(
+      response => {
+        this.getReviews(this.episodeID);
+      }
+    );
+
   }
 }

@@ -29,7 +29,8 @@ export class EpisodeComponent {
   }
 
   onSubmit(){
-    console.log(this.reviewForm.valid);
+    this.webService.postReview(this.reviewForm.value);
+    this.reviewForm.reset();
   }
 
   isInvalid(control){
