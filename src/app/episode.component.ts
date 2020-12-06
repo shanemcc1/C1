@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { WebService } from './web.service';
 import { ActivatedRoute} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
+import {AuthService} from './auth.service';
 
 @Component({
   selector: 'episode',
@@ -15,7 +16,8 @@ export class EpisodeComponent {
 
   constructor(public webService: WebService,
               public route: ActivatedRoute,
-              public formBuilder: FormBuilder) {
+              public formBuilder: FormBuilder,
+              public authService: AuthService) {
     this.reviewForm = formBuilder.group({
       username: [ '', Validators.required],
       comment: ['', Validators.required],

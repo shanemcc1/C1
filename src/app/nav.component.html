@@ -10,8 +10,20 @@
         <li class="nav-item">
       <a class="nav-link" routerLink='/gameofthrones'>Game of Thrones</a>
     </li>
-
-
-
   </ul>
+
+  <div class="form-inline ml-auto">
+    <button class="btn btn-outline-light"
+            (click)="authService.login()"
+            *ngIf="!authService.loggedIn">
+  Log in
+    </button>
+
+
+    <button class="btn btn-outline-light"
+            (click)="authService.logout()"
+            *ngIf="authService.loggedIn">
+  Log Out
+    </button>
+  </div>
 </div>

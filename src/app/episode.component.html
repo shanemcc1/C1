@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container" *ngIf="authService.loggedIn">
   <div class="row">
     <div class="col-sm-12">
       <div class="card bg-light mb-3"
@@ -75,6 +75,16 @@
         </span>
         <button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary">Submit</button>
       </form>
+    </div>
+  </div>
+</div>
+
+<div class="container" *ngIf="!authService.loggedIn">
+  <div class="row">
+    <div class="col-sm-12">
+      <h3>
+        Please login to review this
+      </h3>
     </div>
   </div>
 </div>
