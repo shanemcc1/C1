@@ -5,7 +5,7 @@
   <div class = "row">
     <h1>1</h1>
     <div class="col-sm-12">
-        <div *ngIf="webService.episode_list | async; let episode">
+        <div *ngFor="let episode of webService.episode | async">
            <div class = "card text-white bg-primary mb-3">
             <div class="card-header">
               {{episode.name}}
@@ -24,3 +24,24 @@
       </div>
   </div>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card bg-light mb-3"
+        *ngFor = "let review of webService.reviews_list | async">
+        <div class="card-header">
+          Review by {{review.username}}
+          on {{review.date | date }}
+        </div>
+        <div class="card-body">
+          {{review.comment}}
+        </div>
+        <div class="card-footer">
+          {{review.stars}} stars
+        </div>
+        </div>
+    </div>
+  </div>
+</div>
+

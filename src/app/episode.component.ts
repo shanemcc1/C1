@@ -12,9 +12,8 @@ export class EpisodeComponent {
   constructor(public webService: WebService,
               public route: ActivatedRoute) {}
   ngOnInit() {
-    console.log('start of ngOnInit');
     this.webService.getEpisode(this.route.snapshot.params.id);
-    console.log('nearly left ngOnInit');
+    this.webService.getReviews(this.route.snapshot.params.id);
   }
 }
 
