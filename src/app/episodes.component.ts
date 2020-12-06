@@ -12,6 +12,5 @@ export class EpisodesComponent {
    ngOnInit() {
     this.webService.getEpisodes(this.page);
   }
-  episode_list;
   page = 1;
 }
