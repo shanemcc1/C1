@@ -4,22 +4,23 @@ import {Observable, Subject} from "rxjs";
 
 @Injectable()
 export class WebService{
-  private episode_private_list;
+  private episodes_private_list;
   episodesSubject = new Subject();
-  episode_list = this.episodesSubject.asObservable();
+  episodes_list = this.episodesSubject.asObservable();
 
   constructor(private http: HttpClient) {}
   getEpisodes(page)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page).subscribe(response => {
-      this.episode_private_list = response;
-      this.episodesSubject.next(this.episode_private_list);
+      this.episodes_private_list = response;
+      console.log(response);
+      this.episodesSubject.next(this.episodes_private_list);
     });
   }
-  /*
+
+
   getEpisode(id: any)
   {
-    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id).toPromise();
+    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/');
   }
-  */
 }

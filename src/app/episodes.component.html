@@ -5,7 +5,7 @@
 <div class ="container">
   <div class = "row">
     <div class="col-sm-12">
-      <div *ngFor="let episode of webService.episode_list | async ">
+      <div *ngFor="let episode of webService.episodes_list | async ">
         <div class = "card text-white bg-primary mb-3"
               [routerLink] = "['/gameofthrones', episode._id]"
           style = "cursor: pointer">
