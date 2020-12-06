@@ -3,7 +3,6 @@
 </div>
 <div class ="container">
   <div class = "row">
-    <h1>1</h1>
     <div class="col-sm-12">
         <div *ngFor="let episode of webService.episode | async">
            <div class = "card text-white bg-primary mb-3">
@@ -45,3 +44,35 @@
   </div>
 </div>
 
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>
+        Please review a business
+      </h2>
+      <form [formGroup]='reviewForm' (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="username">Name</label>
+          <input type="text" id="username" name="username" class="form-control" formControlName="username">
+        </div>
+        <div class="form-group">
+          <label for="comment">Please leave your review below</label>
+          <textarea id="comment" name="comment" rows="3" class="form-control" formControlName="comment">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="stars">Please provide a rating (5=best)</label>
+          <select type="text" id="stars" name="stars" class="form-control" formControlName="stars">
+            <option value="1"> 1 Star</option>
+            <option value="2"> 2 Stars</option>
+            <option value="3"> 3 Stars</option>
+            <option value="4"> 4 Stars</option>
+            <option value="5"> 5 Stars</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
