@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { WebService } from './web.service';
 import { ActivatedRoute} from '@angular/router';
-import { FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'episode',
@@ -17,8 +17,8 @@ export class EpisodeComponent {
               public route: ActivatedRoute,
               public formBuilder: FormBuilder) {
     this.reviewForm = formBuilder.group({
-      username: '',
-      comment: '',
+      username: [ '', Validators.required],
+      comment: ['', Validators.required],
       stars: 5
     });
   }
@@ -29,7 +29,20 @@ export class EpisodeComponent {
   }
 
   onSubmit(){
-    console.log(this.reviewForm.value);
+    console.log(this.reviewForm.valid);
+  }
+
+  isInvalid(control){
+    return this.reviewForm.controls[control].invalid &&
+      this.reviewForm.controls[control].touched;
+  }
+
+  isUntouched(){
+    return this.reviewForm.controls.username.pristine ||
+          this.reviewForm.controls.comment.pristine;
+  }
+  isIncomplete(){
+    return this.isInvalid('username') || this.isInvalid('comment') || this.isUntouched();
   }
 }
 
