@@ -10,6 +10,7 @@ import { HomeComponent} from './home.component';
 import { EpisodeComponent} from './episode.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { AuthService} from './auth.service';
+import { NavComponent} from './nav.component';
 
 var routes = [
   {
@@ -28,7 +29,7 @@ var routes = [
 ];
 @NgModule({
   declarations: [
-    AppComponent, EpisodesComponent, EpisodeComponent, HomeComponent
+    AppComponent, EpisodesComponent, EpisodeComponent, HomeComponent, NavComponent
   ],
   imports: [
     BrowserModule,
