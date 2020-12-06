@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent} from './home.component';
 import { EpisodeComponent} from './episode.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { AuthService} from './auth.service';
 
 var routes = [
   {
@@ -33,7 +34,7 @@ var routes = [
     BrowserModule,
     AppRoutingModule, HttpClientModule, RouterModule.forRoot(routes), ReactiveFormsModule, FormsModule
   ],
-  providers: [WebService],
+  providers: [WebService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
