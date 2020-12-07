@@ -10,7 +10,7 @@ import { WebService } from './web.service';
 export class EpisodesComponent {
   page = 1;
   page_size = 10;
-  dropdownlabel ;
+  dropdownlabel = 1;
 
   constructor(public webService: WebService) {}
 

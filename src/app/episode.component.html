@@ -3,10 +3,9 @@
   <div class = "row">
     <div class>
         <div class="col-12 mb-1" *ngFor="let episode of webService.episode | async">
-          <h1>Tite = {{episode.name}}</h1>
           <div class = "card text-white bg-dark mb-3">
             <div class="card-header">
-              {{episode.name}}
+              <h2>{{episode.name}}</h2>
             </div>
              <div>
               <img src="{{episode.image}}" class=shadow-lg width="348" height="230">
@@ -15,18 +14,20 @@
               This episodes summary:{{episode.summary}}
             </div>
             <div class="card-header">
-              This episodes number: {{episode.episode}}
+              Episode: {{episode.episode}}
+            </div>
+             <div class="card-header">
+              Airdate: {{episode.airdate}}
             </div>
             <div class="card-header">
-              This episodes airdate: {{episode.airdate}}
+              Season: {{episode.season}}
             </div>
-             <div class="card-header">
+            <div class="card-header">
               This episodes imbd rating: {{episode.imbd_rating}}
             </div>
-             <div class="card-header">
-              This episodes airdate: {{episode.airdate}}
-            </div><div class="card-header">
-              This episodes season: {{episode.season}}
+            <div class="card-header">
+              Link to IMBD:
+              <a href="{{episode.imbd_url}}">  {{episode.imbd_url}}</a>
             </div>
 
            </div>

@@ -1,7 +1,7 @@
 <div class ="container" style="margin-top: 100px">
 
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
+    <button class="btn btn-primary dropdown-toggle mb-2" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
    </button>
     <ul class="dropdown-menu">
       <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=1">Season 1</a></li>
@@ -37,13 +37,9 @@
           </div>
 
           <div class="card-header">
-            This episodes airdate: {{episode.airdate}}
+            This episodes IMBD rating: {{episode.imbd_rating}}
           </div>
         </div>
       </div>
     </div>
 </div>
-
-make anoher query on the endpoint for it then do a list were you query
-based on the value from the list box
-
