@@ -2,7 +2,7 @@
 
   <div class="dropdown">
     <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Season
-    <span class="caret"></span></button>
+   </button>
     <ul class="dropdown-menu">
       <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size)">Season 1</a></li>
       <li><a (click)="page=2; page_size=10; webService.getEpisodes(page, page_size)">Season 2</a></li>
@@ -10,8 +10,8 @@
       <li><a (click)="page=4; page_size=10; webService.getEpisodes(page, page_size)">Season 4</a></li>
       <li><a (click)="page=5; page_size=10; webService.getEpisodes(page, page_size)">Season 5</a></li>
       <li><a (click)="page=6; page_size=10; webService.getEpisodes(page, page_size)">Season 6</a></li>
-      <li><a (click)="page=7; page_size=10; webService.getEpisodes(page, page_size)">Season 7</a></li>
-      <li><a (click)="page=8; page_size=10; webService.getEpisodes(page, page_size)">Season 8</a></li>
+      <li><a (click)="page=7; page_size=7; webService.getEpisodes(page, page_size)">Season 7</a></li>
+      <li><a (click)="page=8; page_size=6; webService.getEpisodes(page, page_size)">Season 8</a></li>
     </ul>
   </div>
 
@@ -26,7 +26,7 @@
           </div>
 
           <div1 class="card-header">
-            {{episode.name}} + Page:{{page    }} + Page Size:{{page_size  }}
+            Season:{{episode.season}} Episode:{{episode.episode}}: {{episode.name}}
           </div1>
           <div class="card-header">
             This episodes season: {{episode.season}}
@@ -38,7 +38,6 @@
 
           <div class="card-header">
             This episodes airdate: {{episode.airdate}}
-
           </div>
         </div>
       </div>
