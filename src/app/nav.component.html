@@ -1,29 +1,40 @@
-<div class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+<div class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top" >
 
   <span class="navbar-brand">
     Game of Thrones Directory
   </span>
-  <ul class="navbar-nav">
+  <ul class="navbar-nav nav-pills">
     <li class="nav-item">
       <a class="nav-link" routerLink='/'>Home</a>
     </li>
         <li class="nav-item">
       <a class="nav-link" routerLink='/gameofthrones'>Game of Thrones</a>
     </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbardrop" data-toggle="dropdown">
+                    Dropdown link
+    </a>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/gameofthrones">Link 1</a>
+      <a class="dropdown-item" href="#">Link 2</a>
+      <a class="dropdown-item" href="#">Link 3</a>
+    </div>
+  </li>
   </ul>
+
+
 
   <div class="form-inline ml-auto">
     <button class="btn btn-outline-light"
             (click)="authService.login()"
             *ngIf="!authService.loggedIn">
-  Log in
+      Log in
     </button>
-
 
     <button class="btn btn-outline-light"
             (click)="authService.logout()"
             *ngIf="authService.loggedIn">
-  Log Out
+    Log Out
     </button>
   </div>
 </div>

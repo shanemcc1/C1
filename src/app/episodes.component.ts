@@ -10,7 +10,8 @@ export class EpisodesComponent {
   constructor(public webService: WebService) {}
 
    ngOnInit() {
-    this.webService.getEpisodes(this.page);
+    this.webService.getEpisodes(this.page, this.page_size);
   }
-  page = 1;
+  page = 2;
+  page_size =10;
 }

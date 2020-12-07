@@ -20,9 +20,9 @@ export class WebService{
 
 
   constructor(private http: HttpClient) {}
-  getEpisodes(page)
+  getEpisodes(page, pagesize)
   {
-    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page).subscribe(response => {
+    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page + '&ps=' + pagesize).subscribe(response => {
       this.episodes_private_list = response;
       this.episodesSubject.next(this.episodes_private_list);
     });
@@ -37,7 +37,7 @@ export class WebService{
     });
   }
 
-  getReviews(id: any)
+  getReviews(id)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id + '/reviews').subscribe(response => {
       this.reviews_private_list = response;

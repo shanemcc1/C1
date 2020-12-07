@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthService} from './auth.service';
 
 
+
 @Component({
   selector: 'navigation',
   templateUrl: './nav.component.html',
