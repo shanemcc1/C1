@@ -51,13 +51,6 @@ export class WebService{
     postData.append("comment", review.comment);
     postData.append("stars", review.stars);
 
-    let today = new Date();
-    let todayDate = today.getFullYear() + '-' +
-                    today.getMonth() +
-                    today.getDate();
-
-    postData.append("date", todayDate);
-
     this.http.post('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews', postData).subscribe(
       response => {
         this.getReviews(this.episodeID);

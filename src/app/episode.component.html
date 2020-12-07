@@ -2,28 +2,33 @@
 
   <div class = "row">
     <div class>
-        <div class="col-12 mb-1" *ngFor="let episode of webService.episode | async">
-          <div class = "card text-white bg-dark mb-3">
+        <div class="col-12 font-color mb-1" *ngFor="let episode of webService.episode | async">
+          <div class = "card bg-dark mb-3">
             <div class="card-header">
               <h2 class="ml-2">{{episode.name}}</h2>
             </div>
 
 
           <div class="row">
-            <img class="ml-5 mb-4" src="{{episode.image}}" width="348" height="210">
-           <div class="ml-3">
-             <span>Summary: {{episode.summary}}</span>
+            <img class="ml-5 mb-4 mt-4" src="{{episode.image}}" width="348" height="210">
+            <div>
+              <div class="ml-3">
+             <h1 class="large-font">Summary</h1>
             </div>
+              <div class="ml-3">
+             <span>{{episode.summary}}</span>
+            </div>
+              </div>
           </div>
 
+            <div class="card-header">
+              Season: {{episode.season}}
+            </div>
             <div class="card-header">
               Episode: {{episode.episode}}
             </div>
              <div class="card-header">
               Airdate: {{episode.airdate}}
-            </div>
-            <div class="card-header">
-              Season: {{episode.season}}
             </div>
             <div class="row">
               <a href="{{episode.imbd_url}}">
@@ -32,7 +37,6 @@
               {{episode.imbd_rating}}
             </div>
               </div>
-
            </div>
         </div>
       </div>
@@ -48,16 +52,15 @@
   </div>
      <hr/>
 
-
-
+   <h1>Reviews </h1>
 <div class="container" >
   <div class="row">
     <div class="col-sm-12">
       <div class="card bg-light mb-3"
         *ngFor = "let review of webService.reviews_list | async">
+
         <div class="card-header">
           Review by {{review.username}}
-          on {{review.date | date }}
         </div>
         <div class="card-body">
           {{review.comment}}
@@ -65,7 +68,11 @@
         <div class="card-footer">
           {{review.stars}} stars
         </div>
+
         </div>
+
+
+
     </div>
   </div>
 </div>
@@ -73,7 +80,7 @@
 
 <div class="container mt-2" *ngIf="authService.loggedIn">
   <div class="row">
-    <div class="col-sm-8 bg-success">
+    <div class="col-sm-12 bg-success">
       <h2>
         Leave a review for this episode
       </h2>
@@ -99,10 +106,10 @@
             <option value="5"> 5 Stars</option>
           </select>
         </div>
-        <span *ngIf="isIncomplete()">
+        <span class="mb-5" *ngIf="isIncomplete()">
           You must complete all fields
         </span>
-        <button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary">Submit</button>
+        <button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary mb-5">Submit</button>
       </form>
     </div>
   </div>
