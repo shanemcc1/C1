@@ -1,24 +1,23 @@
 <div class ="container" style="margin-top: 100px">
 
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Dropdown Example
+    <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Season
     <span class="caret"></span></button>
     <ul class="dropdown-menu">
-      <li><a href="#">Season 1</a>{{webService.getEpisodes(2, 10)}}</li>
-      <li><a href="#">Season 2</a></li>
-      <li><a href="#">Season 3</a></li>
-      <li><a href="#">Season 4</a></li>
-      <li><a href="#">Season 5</a></li>
-      <li><a href="#">Season 6</a></li>
-      <li><a href="#">Season 7</a></li>
-      <li><a href="#">Season 8</a></li>
+      <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size)">Season 1</a></li>
+      <li><a (click)="page=2; page_size=10; webService.getEpisodes(page, page_size)">Season 2</a></li>
+      <li><a (click)="page=3; page_size=10; webService.getEpisodes(page, page_size)">Season 3</a></li>
+      <li><a (click)="page=4; page_size=10; webService.getEpisodes(page, page_size)">Season 4</a></li>
+      <li><a (click)="page=5; page_size=10; webService.getEpisodes(page, page_size)">Season 5</a></li>
+      <li><a (click)="page=6; page_size=10; webService.getEpisodes(page, page_size)">Season 6</a></li>
+      <li><a (click)="page=7; page_size=10; webService.getEpisodes(page, page_size)">Season 7</a></li>
+      <li><a (click)="page=8; page_size=10; webService.getEpisodes(page, page_size)">Season 8</a></li>
     </ul>
   </div>
 
 
   <div class = "row">
       <div class="col-4 mb-1" *ngFor="let episode of webService.episodes_list  | async ">
-
         <div class = "card text-white bg-dark mb-4 "
            [routerLink] = "['/gameofthrones', episode._id]"
           style = "cursor: pointer">
@@ -27,7 +26,7 @@
           </div>
 
           <div1 class="card-header">
-            {{episode.name}} + {{page    }} + {{page_size  }}
+            {{episode.name}} + Page:{{page    }} + Page Size:{{page_size  }}
           </div1>
           <div class="card-header">
             This episodes season: {{episode.season}}

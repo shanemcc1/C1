@@ -7,7 +7,7 @@ import { WebService } from './web.service';
   styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent {
-  page;
+  page = 1;
   page_size = 10;
 
   constructor(public webService: WebService) {}
