@@ -1,8 +1,12 @@
-div1 {color: white; font-size: large; font-family: Baghdad}
-
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
+.small-font{
+   font-size: 20px;
+}
+
+.episode-title {color: white; font-size: 16px}

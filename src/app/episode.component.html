@@ -5,14 +5,17 @@
         <div class="col-12 mb-1" *ngFor="let episode of webService.episode | async">
           <div class = "card text-white bg-dark mb-3">
             <div class="card-header">
-              <h2>{{episode.name}}</h2>
+              <h2 class="ml-2">{{episode.name}}</h2>
             </div>
-             <div>
-              <img src="{{episode.image}}" class=shadow-lg width="348" height="210">
-              </div>
-            <div class="card-header cen">
-              This episodes summary:{{episode.summary}}
+
+
+          <div class="row">
+            <img class="ml-5 mb-4" src="{{episode.image}}" width="348" height="210">
+           <div class="ml-3">
+             <span>Summary: {{episode.summary}}</span>
             </div>
+          </div>
+
             <div class="card-header">
               Episode: {{episode.episode}}
             </div>
@@ -22,19 +25,30 @@
             <div class="card-header">
               Season: {{episode.season}}
             </div>
-            <div class="card-header">
-              This episodes imbd rating: {{episode.imbd_rating}}
+            <div class="row">
+              <a href="{{episode.imbd_url}}">
+              <img class="ml-5 mb-4 mt-4" src="assets/img/imbd.png" width="40" height="40"></a>
+              <div class="card-header mt-4">
+              {{episode.imbd_rating}}
             </div>
-            <div class="card-header">
-              Link to IMBD:
-              <a href="{{episode.imbd_url}}">  {{episode.imbd_url}}</a>
-            </div>
+              </div>
 
            </div>
         </div>
       </div>
   </div>
 </div>
+ <hr/>
+    <h1>Season 3</h1>
+  <div class="row">
+      <img class="ml-4 mb-4" src="assets/img/333.jpeg" width="200" height="300">
+    <div class="ml-3 small-font">
+    Summary
+    </div>
+  </div>
+     <hr/>
+
+
 
 <div class="container" >
   <div class="row">

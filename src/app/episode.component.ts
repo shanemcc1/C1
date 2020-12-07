@@ -7,6 +7,7 @@ import {AuthService} from './auth.service';
 @Component({
   selector: 'episode',
   templateUrl: './episode.component.html',
+  template: '<img src="../assets/img">',
   styleUrls: ['./episode.component.css']
 })
 
