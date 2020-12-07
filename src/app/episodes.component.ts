@@ -7,11 +7,13 @@ import { WebService } from './web.service';
   styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent {
+  page;
+  page_size = 10;
+
   constructor(public webService: WebService) {}
 
    ngOnInit() {
     this.webService.getEpisodes(this.page, this.page_size);
   }
-  page = 2;
-  page_size =10;
+
 }
