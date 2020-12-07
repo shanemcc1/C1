@@ -1,17 +1,17 @@
 <div class ="container" style="margin-top: 100px">
 
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Season
+    <button class="btn btn-primary dropdown-toggle mb-3" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
    </button>
     <ul class="dropdown-menu">
-      <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size)">Season 1</a></li>
-      <li><a (click)="page=2; page_size=10; webService.getEpisodes(page, page_size)">Season 2</a></li>
-      <li><a (click)="page=3; page_size=10; webService.getEpisodes(page, page_size)">Season 3</a></li>
-      <li><a (click)="page=4; page_size=10; webService.getEpisodes(page, page_size)">Season 4</a></li>
-      <li><a (click)="page=5; page_size=10; webService.getEpisodes(page, page_size)">Season 5</a></li>
-      <li><a (click)="page=6; page_size=10; webService.getEpisodes(page, page_size)">Season 6</a></li>
-      <li><a (click)="page=7; page_size=7; webService.getEpisodes(page, page_size)">Season 7</a></li>
-      <li><a (click)="page=8; page_size=6; webService.getEpisodes(page, page_size)">Season 8</a></li>
+      <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=1">Season 1</a></li>
+      <li><a (click)="page=2; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=2">Season 2</a></li>
+      <li><a (click)="page=3; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=3">Season 3</a></li>
+      <li><a (click)="page=4; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=4">Season 4</a></li>
+      <li><a (click)="page=5; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=5">Season 5</a></li>
+      <li><a (click)="page=6; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=6">Season 6</a></li>
+      <li><a (click)="page=7; page_size=7; webService.getEpisodes(page, page_size); dropdownlabel=7">Season 7</a></li>
+      <li><a (click)="page=8; page_size=6; webService.getEpisodes(page, page_size); dropdownlabel=8">Season 8</a></li>
     </ul>
   </div>
 

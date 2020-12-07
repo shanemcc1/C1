@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { WebService } from './web.service';
 
+
 @Component({
   selector: 'episodes',
   templateUrl: './episodes.component.html',
@@ -9,6 +10,7 @@ import { WebService } from './web.service';
 export class EpisodesComponent {
   page = 1;
   page_size = 10;
+  dropdownlabel ;
 
   constructor(public webService: WebService) {}
 
