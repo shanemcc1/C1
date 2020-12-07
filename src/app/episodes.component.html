@@ -1,7 +1,14 @@
-<div class ="container" style="margin-top: 100px">
+<div *ngIf="dropdownlabel===2">
+  <img src="assets/img/2.png">
+</div>
+<div *ngIf="dropdownlabel===3">
+  <img src="assets/img/3.png">
+</div>
 
+
+<div class ="container" style="margin-top: 100px">
   <div class="dropdown">
-    <button class="btn btn-primary dropdown-toggle mb-2" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
+    <button class="btn btn-dark dropdown-toggle" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
    </button>
     <ul class="dropdown-menu">
       <li><a (click)="page=1; page_size=10; webService.getEpisodes(page, page_size); dropdownlabel=1">Season 1</a></li>
@@ -14,8 +21,15 @@
       <li><a (click)="page=8; page_size=6; webService.getEpisodes(page, page_size); dropdownlabel=8">Season 8</a></li>
     </ul>
   </div>
+  <hr/>
+  <div *ngIf="dropdownlabel===3">
+    <h1>Season 3</h1>
+  <div class="row">
+  <img class="ml-4" src="assets/img/333.jpeg" width="200" height="300">
+  </div>
+  </div>
 
-
+  <h1>Episodes</h1>
   <div class = "row">
       <div class="col-4 mb-1" *ngFor="let episode of webService.episodes_list  | async ">
         <div class = "card text-white bg-dark mb-4 "
@@ -29,17 +43,13 @@
             {{episode.name}}
           </div1>
           <div class="card-header">
-            This episodes season: {{episode.season}}
+            Season: {{episode.season}} Episode: {{episode.episode}}
           </div>
-
           <div class="card-header">
-            This episodes number: {{episode.episode}}
-          </div>
-
-          <div class="card-header">
-            This episodes IMBD rating: {{episode.imbd_rating}}
+            IMBD rating: {{episode.imbd_rating}}
           </div>
         </div>
       </div>
     </div>
 </div>
+

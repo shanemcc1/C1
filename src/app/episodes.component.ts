@@ -5,6 +5,7 @@ import { WebService } from './web.service';
 @Component({
   selector: 'episodes',
   templateUrl: './episodes.component.html',
+  template: '<img src="../assets/img">',
   styleUrls: ['./episodes.component.css']
 })
 export class EpisodesComponent {

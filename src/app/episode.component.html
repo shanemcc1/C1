@@ -8,7 +8,7 @@
               <h2>{{episode.name}}</h2>
             </div>
              <div>
-              <img src="{{episode.image}}" class=shadow-lg width="348" height="230">
+              <img src="{{episode.image}}" class=shadow-lg width="348" height="210">
               </div>
             <div class="card-header cen">
               This episodes summary:{{episode.summary}}
@@ -57,11 +57,11 @@
 </div>
 
 
-<div class="container" *ngIf="authService.loggedIn">
+<div class="container mt-2" *ngIf="authService.loggedIn">
   <div class="row">
-    <div class="col-sm-12">
+    <div class="col-sm-8 bg-success">
       <h2>
-        Please review a business
+        Leave a review for this episode
       </h2>
       <form [formGroup] = "reviewForm" (ngSubmit)= "onSubmit()">
         <div class="form-group">
