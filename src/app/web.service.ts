@@ -37,7 +37,7 @@ export class WebService{
     });
   }
 
-  getReviews(id)
+  getReviews(id: any)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id + '/reviews').subscribe(response => {
       this.reviews_private_list = response;
@@ -63,6 +63,5 @@ export class WebService{
         this.getReviews(this.episodeID);
       }
     );
-
   }
 }
