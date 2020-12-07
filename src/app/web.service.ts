@@ -16,10 +16,25 @@ export class WebService{
   reviewsSubject = new Subject();
   reviews_list = this.reviewsSubject.asObservable();
 
+  seasons_private_list;
+  seasonsSubject = new Subject();
+  seasons_list = this.seasonsSubject.asObservable();
+
   episodeID;
 
 
   constructor(private http: HttpClient) {}
+
+  getSeasons(season, season_page_size)
+  {
+    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/seasons?pn=' + season + '&ps=' + season_page_size).subscribe(response => {
+      this.seasons_private_list = response;
+      console.log('REESIIBEUGU');
+      console.log(response);
+      this.seasonsSubject.next(this.seasons_private_list);
+    });
+  }
+
   getEpisodes(page, pagesize)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page + '&ps=' + pagesize).subscribe(response => {

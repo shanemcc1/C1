@@ -7,8 +7,6 @@
             <div class="card-header">
               <h2 class="ml-2">{{episode.name}}</h2>
             </div>
-
-
           <div class="row">
             <img class="ml-5 mb-4 mt-4" src="{{episode.image}}" width="348" height="210">
             <div>
@@ -20,7 +18,6 @@
             </div>
               </div>
           </div>
-
             <div class="card-header">
               Season: {{episode.season}}
             </div>
@@ -56,9 +53,7 @@
 <div class="container" >
   <div class="row">
     <div class="col-sm-12">
-      <div class="card bg-light mb-3"
-        *ngFor = "let review of webService.reviews_list | async">
-
+      <div class="card bg-light mb-3" *ngFor = "let review of webService.reviews_list | async ">
         <div class="card-header">
           Review by {{review.username}}
         </div>
@@ -68,11 +63,7 @@
         <div class="card-footer">
           {{review.stars}} stars
         </div>
-
         </div>
-
-
-
     </div>
   </div>
 </div>
