@@ -13,7 +13,7 @@ import {FormBuilder, Validators} from "@angular/forms";
 })
 export class SeasonsComponent {
   season = 1;
-  season_page_size = 1;
+  season_page_size = 10;
   seasonForm;
 
   constructor(public formBuilder: FormBuilder, public webService: WebService, public authService: AuthService) {

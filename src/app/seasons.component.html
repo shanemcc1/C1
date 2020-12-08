@@ -1,4 +1,33 @@
-<h1>ueigweuqe</h1>
+<div class ="container" style="margin-top: 30px">
+  <div class = "row">
+    <div>
+      <div class="col-12 mb-2" *ngFor="let season of webService.seasons_list  | async ">
+        <h1>Season {{season.season_number}}</h1>
+        <div class="row">
+          <div class="ml-4 mb-4">
+          <img src="{{season.season_image}}" class=shadow-lg width="200" height="300">
+          </div>
+          <div>
+          <div class="ml-3 large-font">
+            <h1 class="large-font">Summary</h1>
+          </div>
+          <div class="ml-4">
+             <span class="spantext">{{season.season_description}}</span>
+          </div>
+            <div class="ml-4 mt-4">
+             <span>{{season.season_rating}}</span>
+          </div>
+
+      </div>
+
+      </div>
+        <hr/>
+      </div>
+      </div>
+    </div>
+
+
+
   <div class="container mt-2 dark-font" *ngIf="authService.loggedIn">
   <div class="row mt-2">
     <div class="col-sm-12 background">
@@ -31,3 +60,4 @@
     </div>
   </div>
   </div>
+</div>
