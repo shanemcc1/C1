@@ -1,35 +1,35 @@
-<div class ="container font-color" style="margin-top: 50px">
-  <div class = "row font-color">
+<div class ="container dark-font noborder" style="margin-top: 50px">
+  <div class = "row  background noborder">
     <div class>
-        <div class="col-12 mb-1" *ngFor="let episode of webService.episode | async">
-          <div class = "card bg-dark mb-3">
-            <div class="card-header">
+        <div class="col-12 mb-1 background noborder" *ngFor="let episode of webService.episode | async">
+          <div class = "card  mb-3 background noborder">
+            <div class="card-header background ">
               <h2 class="ml-2">{{episode.name}}</h2>
             </div>
-          <div class="row">
-            <img class="ml-5 mb-4 mt-4" src="{{episode.image}}" width="348" height="210">
+          <div class="row background ">
+            <img class="ml-5 mb-4 mt-4 background" src="{{episode.image}}" width="348" height="210">
             <div>
-              <div class="ml-3">
-             <h1 class="large-font">Summary</h1>
+              <div class="ml-3 background" >
+             <h1 class="large-font background">Summary</h1>
             </div>
-              <div class="ml-3">
-             <span class="spantext">{{episode.summary}}</span>
+              <div class="ml-3 background noborder">
+             <span class="spantext background">{{episode.summary}}</span>
             </div>
               </div>
           </div>
-            <div class="card-header">
+            <div class="card-header background ">
               Season: {{episode.season}}
             </div>
-            <div class="card-header">
+            <div class="card-header background ">
               Episode: {{episode.episode}}
             </div>
-             <div class="card-header">
+             <div class="card-header background ">
               Airdate: {{episode.airdate}}
             </div>
-            <div class="row">
+            <div class="row backgrou">
               <a href="{{episode.imbd_url}}">
-              <img class="ml-5 mb-4 mt-4" src="assets/img/imbd.png" width="40" height="40"></a>
-              <div class="card-header mt-4">
+              <img class="background ml-5 mb-4 mt-4" src="assets/img/imbd.png" width="40" height="40"></a>
+              <div class="card-header mt-4 background noborder">
               {{episode.imbd_rating}}
             </div>
               </div>
@@ -38,10 +38,9 @@
       </div>
   </div>
 
-
-
-<h1>Reviews </h1>
-<div class="container text-dark" >
+<hr/>
+<div class="container text-dark mb-5" >
+  <h1>Reviews</h1>
   <div class="row">
     <div class="col-sm-12">
       <div class="card bg-light mb-3" *ngFor = "let review of webService.reviews_list | async ">
@@ -58,7 +57,7 @@
     </div>
   </div>
 </div>
-
+<hr/>
 
 <div class="container mt-2 font-color" *ngIf="authService.loggedIn">
   <div class="row">
@@ -96,7 +95,7 @@
     </div>
   </div>
 </div>
-
+<hr/>
 <div class="container" *ngIf="!authService.loggedIn">
   <div class="row">
     <div class="col-sm-12">
