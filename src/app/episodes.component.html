@@ -23,7 +23,7 @@
   <img src="../assets/img/8.png">
 </div>
 
-<div class ="container" style="margin-top: 25px">
+<div class ="container" style="margin-top: 30px">
   <div class="dropdown">
     <button class="btn btn-dark dropdown-toggle mb-4" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
    </button>
@@ -43,7 +43,7 @@
   <h1>Season {{season}}</h1>
   <div class = "row">
     <div>
-      <div class="col-12 mb-4" *ngFor="let season of webService.seasons_list  | async ">
+      <div class="col-12 mb-2" *ngFor="let season of webService.seasons_list  | async ">
         <div class="row">
           <div class="ml-4 mb-4">
           <img src="{{season.season_image}}" class=shadow-lg width="200" height="300">
