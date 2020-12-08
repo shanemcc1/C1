@@ -13,10 +13,8 @@ export class EpisodesComponent {
   page_size = 10;
   dropdownlabel = 1;
 
-  season =1;
+  season = 1;
   season_page_size = 1;
-
-
 
   constructor(public webService: WebService) {}
 
