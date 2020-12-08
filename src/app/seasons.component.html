@@ -28,6 +28,7 @@
       </div>
       </div>
 
+    <div  *ngIf="div1">
   <div class="container mt-2 dark-font mb-5" *ngIf="authService.loggedIn">
    <h1 class="mb-5">Add a season</h1>
     <div class="row mt-2">
@@ -62,6 +63,11 @@
   </div>
   </div>
   </div>
+  </div>
+</div>
+
+<div class="container mt-2 dark-font center" *ngIf="authService.loggedIn">
+  <button *ngIf="add_season_button" class="  mt-4 btn-xl mb-5 font-color bg-dark" (click)="div1Function()">Add Season</button>
 </div>
 
 <div class="container " *ngIf="!authService.loggedIn">

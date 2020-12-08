@@ -14,6 +14,14 @@ import { AuthService} from './auth.service';
 export class EpisodeComponent {
 
   reviewForm;
+  div1 = false;
+  add_review_button = true;
+
+  // tslint:disable-next-line:typedef
+  div1Function(){
+    this.div1 = true;
+    this.add_review_button = false;
+    }
 
   constructor(public webService: WebService,
               public route: ActivatedRoute,

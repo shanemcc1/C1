@@ -63,7 +63,7 @@
 </div>
 <hr/>
 
-
+<div  *ngIf="div1">
 <div class="container mt-2 dark-font mb-5" *ngIf="authService.loggedIn">
   <h1 class="mb-5">Leave a review for this episode</h1>
   <div class="row mt-2">
@@ -97,6 +97,11 @@
       </form>
     </div>
   </div>
+</div>
+</div>
+
+<div class="container mt-2 dark-font mb-5 center" *ngIf="authService.loggedIn">
+  <button *ngIf="add_review_button" class="  mt-4 btn-xl mb-5 font-color bg-dark" (click)="div1Function()">Add Review</button>
 </div>
 
 <div class="container mb-4" *ngIf="!authService.loggedIn">

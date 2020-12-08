@@ -16,6 +16,15 @@ export class SeasonsComponent {
   season_page_size = 10;
   seasonForm;
 
+  div1 = false;
+  add_season_button = true;
+
+  // tslint:disable-next-line:typedef
+  div1Function(){
+    this.div1 = true;
+    this.add_season_button = false;
+    }
+
   constructor(public formBuilder: FormBuilder,
               public route: ActivatedRoute,
               public webService: WebService,

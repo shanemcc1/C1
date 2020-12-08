@@ -29,3 +29,13 @@ hr {
 .noborder{border: none !important;}
 
 .dark-font{color: #383838}
+
+.btn-xl {
+    padding: 7.5px 15px;
+    font-size: 15px;
+    border-radius: 7.5px;
+}
+
+.center {
+  text-align: center;
+}

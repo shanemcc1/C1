@@ -16,3 +16,15 @@ body {background-color: #dbdbdb}
 .background{background-color: #BEBEBE}
 
 .error {background-color: indianred}
+
+.center {
+  text-align: center;
+}
+
+.font-color {color: #dbdbdb}
+
+.btn-xl {
+    padding: 7.5px 15px;
+    font-size: 15px;
+    border-radius: 7.5px;
+}
