@@ -14,7 +14,6 @@ import {AuthService} from './auth.service';
 export class EpisodeComponent {
 
   reviewForm;
-  reviewCount = 0;
 
   constructor(public webService: WebService,
               public route: ActivatedRoute,

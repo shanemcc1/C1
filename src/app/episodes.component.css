@@ -12,3 +12,11 @@ hr {
 .episode-title {color: #dbdbdb; font-size: 16px}
 
 .font-color {color: #dbdbdb}
+
+.spantext{
+    display:block;
+    width:750px;
+    word-wrap:break-word;
+}
+
+.large-font{font-size: 30px}
