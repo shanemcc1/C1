@@ -3,15 +3,27 @@
   <img src="assets/img/1.png">
 </div>
 
-<div class="container center mb-5 mt-5">
-  <h1 class="large-font">Welcoome to the Game of Thrones Directory</h1>
+<div class="container center mt-5">
+  <h1 class="large-font">Welcome to the Game of Thrones Directory</h1>
 </div>
-<div class="container bg-primary mb-5">
-  <h1 class="center">Seasons here</h1>
-</div>
-<div class="container bg-success mb-5">
-  <h1 class="center">Log in Button here</h1>
-</div>
+<hr/>
+  <div class = "container mt-5">
+    <div class="row">
+      <div class="row">
+        <div class="col-3 mb-5 " *ngFor="let season of webService.seasons_list  | async ">
+        <div class="row">
+          <div class="ml-4 mb-4">
+          <img src="{{season.season_image}}" class=shadow-lg width="160" height="240">
+            <h1 class="dark-font">Season {{season.season_number}}</h1>
+          </div>
+          </div>
+          <div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </div>
+  <hr/>
 
   <div class="containeredit">
   <div class="centeredit">
