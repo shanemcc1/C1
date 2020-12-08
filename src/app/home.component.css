@@ -1,2 +1,26 @@
 
+body {background-color: #dbdbdb}
 
+.center {
+  text-align: center;
+}
+
+.jumbo-font{font-size: 75px}
+
+.large-font{font-size: 50px}
+
+.font-color {color: #dbdbdb}
+
+.containeredit {
+  height: 50px;
+  position: relative;
+}
+
+.centeredit {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}

@@ -2,5 +2,32 @@
 <div>
   <img src="assets/img/1.png">
 </div>
-<h1>joihjweoif</h1>
+
+<div class="container center mb-5 mt-5">
+  <h1 class="large-font">Welcoome to the Game of Thrones Directory</h1>
+</div>
+<div class="container bg-primary mb-5">
+  <h1 class="center">Seasons here</h1>
+</div>
+<div class="container bg-success mb-5">
+  <h1 class="center">Log in Button here</h1>
+</div>
+
+  <div class="containeredit">
+  <div class="centeredit">
+       <button class="btn btn-outline-light bg-dark font-color"
+            (click)="authService.logout()"
+            *ngIf="authService.loggedIn">
+    Log Out
+    </button>
+    <button class="btn bg-dark font-color"
+            (click)="authService.login()"
+            *ngIf="!authService.loggedIn">
+      Log in
+    </button>
+
+  </div>
+
+  </div>
 </body>
+
