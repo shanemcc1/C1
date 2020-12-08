@@ -10,3 +10,9 @@ hr {
     width:750px;
     word-wrap:break-word;
 }
+
+body {background-color: #dbdbdb}
+
+.background{background-color: #BEBEBE}
+
+.error {background-color: indianred}

@@ -20,7 +20,12 @@ export class WebService{
   seasonsSubject = new Subject();
   seasons_list = this.seasonsSubject.asObservable();
 
+  season_private_list;
+  seasonSubject = new Subject();
+  season_list = this.seasonSubject.asObservable();
+
   episodeID;
+  seasonID;
 
 
   constructor(private http: HttpClient) {}
@@ -29,9 +34,16 @@ export class WebService{
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/seasons?pn=' + season + '&ps=' + season_page_size).subscribe(response => {
       this.seasons_private_list = response;
-      console.log('REESIIBEUGU');
-      console.log(response);
       this.seasonsSubject.next(this.seasons_private_list);
+    });
+  }
+
+  getSeason(id)
+  {
+    return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/seasons' + id).subscribe(response => {
+      this.season_private_list = [response];
+      this.seasonID = id;
+      this.seasonSubject.next(this.season_private_list);
     });
   }
 
@@ -108,4 +120,6 @@ export class WebService{
     );
   }
 }
+
+/* https://image.tmdb.org/t/p/original/50l0vWylWvucHs0xh64yBAWYTcR.jpg */
 

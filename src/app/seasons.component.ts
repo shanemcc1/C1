@@ -16,7 +16,10 @@ export class SeasonsComponent {
   season_page_size = 10;
   seasonForm;
 
-  constructor(public formBuilder: FormBuilder, public webService: WebService, public authService: AuthService) {
+  constructor(public formBuilder: FormBuilder,
+              public route: ActivatedRoute,
+              public webService: WebService,
+              public authService: AuthService) {
     this.seasonForm = formBuilder.group({
       season_number: [ '', Validators.required],
       season_description: ['', Validators.required],
@@ -27,6 +30,7 @@ export class SeasonsComponent {
 
    ngOnInit() {
     this.webService.getSeasons(this.season, this.season_page_size);
+    this.webService.getSeason(this.route.snapshot.params.id);
   }
     onSubmit(){
     this.webService.postSeason(this.seasonForm.value);
