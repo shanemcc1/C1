@@ -3,16 +3,16 @@
   <img src="assets/img/1.png">
 </div>
 
-<div class="container center mt-5">
+<div class="container center mt-5 ">
   <h1 class="large-font">Welcome to the Game of Thrones Directory</h1>
 </div>
 <hr/>
   <div class = "container mt-5">
     <div class="row">
       <div class="row">
-        <div class="col-3 mb-5 " *ngFor="let season of webService.seasons_list  | async ">
+        <div class="col-3" *ngFor="let season of webService.seasons_list  | async ">
         <div class="row">
-          <div class="ml-4 mb-4">
+          <div class="ml-7 mb-4">
           <img src="{{season.season_image}}" class=shadow-lg width="160" height="240">
             <h1 class="dark-font">Season {{season.season_number}}</h1>
           </div>
