@@ -72,4 +72,28 @@ export class WebService{
       }
     );
   }
+
+  postEpisode(episode){
+    let postEpisodeData = new FormData();
+    console.log('episode name');
+    console.log(episode);
+
+    postEpisodeData.append('name', episode.name);
+    postEpisodeData.append('season', episode.season);
+    postEpisodeData.append('episode', episode.episode);
+    postEpisodeData.append('airdate', episode.airdate);
+    postEpisodeData.append('summary', episode.summary);
+    postEpisodeData.append('reviews', episode.reviews);
+    postEpisodeData.append('imbd_rating', episode.imbd_rating);
+    postEpisodeData.append('imbd_url', episode.imbd_url);
+    postEpisodeData.append('image', episode.image);
+    console.log('postdata');
+    console.log(postEpisodeData);
+
+    this.http.post('http://localhost:5000/api/v1.0/gameofthrones', postEpisodeData).subscribe(
+      response => {
+        this.getEpisodes(1, 10);
+      }
+    );
+  }
 }

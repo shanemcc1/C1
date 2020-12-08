@@ -13,11 +13,10 @@
         <div class="col-3" *ngFor="let season of webService.seasons_list  | async ">
         <div class="row" >
           <div class="ml-7 mb-4" [routerLink] = "['/gameofthrones']" style="cursor: pointer">
-            <a (click)="season_number = season; season_page_size = 1; webService.getSeasons(season_number, season_page_size);"></a>
 
 
           <img src="{{season.season_image}}"  class=shadow-lg width="160" height="240">
-            <h1 class="dark-font">Season {{season.season_number}}</h1>
+            <h1 class="dark-font small-font center">Season {{season.season_number}}</h1>
           </div>
           </div>
           <div>
@@ -40,6 +39,9 @@
             *ngIf="!authService.loggedIn">
       Log in
     </button>
+
+
+
 
   </div>
 

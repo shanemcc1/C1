@@ -34,8 +34,8 @@
       <li><a (click)="season = 4; page=4; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=4">Season 4</a></li>
       <li><a (click)="season = 5; page=5; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=5">Season 5</a></li>
       <li><a (click)="season = 6; page=6; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=6">Season 6</a></li>
-      <li><a (click)="season = 7; page=7; page_size=7; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=7">Season 7</a></li>
-      <li><a (click)="season = 8; page=8; page_size=6; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=8">Season 8</a></li>
+      <li><a (click)="season = 7; page=7; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=7">Season 7</a></li>
+
     </ul>
   </div>
   <hr/>
@@ -83,4 +83,58 @@
         </div>
       </div>
     </div>
+
+  <div class="container mt-2 dark-font" *ngIf="authService.loggedIn">
+  <div class="row mt-2">
+    <div class="col-sm-12 background">
+      <form class="mt-4 mb-4" [formGroup] = "episodeForm" (ngSubmit)= "onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-control" formControlName="name"
+          [ngClass] = "{ 'error' : isInvalid('name')}">
+        </div>
+        <div class="form-group">
+          <label for="season">season</label>
+          <input type="text" id="season" name="season" class="form-control" formControlName="season"
+          [ngClass] = "{ 'error' : isInvalid('season')}">
+        </div>
+        <div class="form-group">
+          <label for="episode">episode</label>
+          <input type="text" id="episode" name="episode" class="form-control" formControlName="episode"
+          [ngClass] = "{ 'error' : isInvalid('episode')}">
+        </div>
+        <div class="form-group">
+          <label for="airdate">airdate</label>
+          <input type="text" id="airdate" name="airdate" class="form-control" formControlName="airdate"
+          [ngClass] = "{ 'error' : isInvalid('airdate')}">
+        </div>
+        <div class="form-group">
+          <label for="summary">summary</label>
+          <input type="text" id="summary" name="summary" class="form-control" formControlName="summary"
+          [ngClass] = "{ 'error' : isInvalid('summary')}">
+        </div>
+        <div class="form-group">
+          <label for="imbd_rating">imbd_rating</label>
+          <input type="text" id="imbd_rating" name="imbd_rating" class="form-control" formControlName="imbd_rating"
+          [ngClass] = "{ 'error' : isInvalid('imbd_rating')}">
+        </div>
+
+        <div class="form-group">
+          <label for="imbd_url">imbd_url</label>
+          <input type="text" id="imbd_url" name="imbd_url" class="form-control" formControlName="imbd_url"
+          [ngClass] = "{ 'error' : isInvalid('imbd_url')}">
+        </div>
+        <div class="form-group">
+          <label for="image">image</label>
+          <input type="text" id="image" name="image" class="form-control" formControlName="image"
+          [ngClass] = "{ 'error' : isInvalid('image')}">
+        </div>
+        <span class="mb-5" *ngIf="isIncomplete()">
+          You must complete all fields
+        </span>
+        <button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary mb-5">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
 </div>

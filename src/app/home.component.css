@@ -24,6 +24,8 @@ body {background-color: #dbdbdb}
   position: relative;
 }
 
+.small-font{font-size: 14px}
+
 .centeredit {
   margin: 0;
   position: absolute;
