@@ -1,0 +1,33 @@
+<h1>ueigweuqe</h1>
+  <div class="container mt-2 dark-font" *ngIf="authService.loggedIn">
+  <div class="row mt-2">
+    <div class="col-sm-12 background">
+      <form class="mt-4 mb-4" [formGroup] = "seasonForm" (ngSubmit)= "onSubmit()">
+        <div class="form-group">
+          <label for="season_number">Season Number</label>
+          <input type="text" id="season_number" name="season_number" class="form-control" formControlName="season_number"
+          [ngClass] = "{ 'error' : isInvalid('season_number')}">
+        </div>
+        <div class="form-group">
+          <label for="season_description">Season Description</label>
+          <input type="text" id="season_description" name="season_description" class="form-control" formControlName="season_description"
+          [ngClass] = "{ 'error' : isInvalid('season_description')}">
+        </div>
+        <div class="form-group">
+          <label for="season_rating">Season Rating</label>
+          <input type="text" id="season_rating" name="season_rating" class="form-control" formControlName="season_rating"
+          [ngClass] = "{ 'error' : isInvalid('season_rating')}">
+        </div>
+        <div class="form-group">
+          <label for="season_image">Season Image</label>
+          <input type="text" id="season_image" name="season_image" class="form-control" formControlName="season_image"
+          [ngClass] = "{ 'error' : isInvalid('season_image')}">
+        </div>
+        <span class="mb-5" *ngIf="isIncomplete()">
+          You must complete all fields
+        </span>
+        <button *ngIf="!isIncomplete()" type="submit" class="btn btn-primary mb-5">Submit</button>
+      </form>
+    </div>
+  </div>
+  </div>

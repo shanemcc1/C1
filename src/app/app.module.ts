@@ -11,6 +11,7 @@ import { EpisodeComponent} from './episode.component';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AuthService} from './auth.service';
 import { NavComponent} from './nav.component';
+import { SeasonsComponent} from './seasons.component';
 
 
 var routes = [
@@ -26,11 +27,15 @@ var routes = [
     path: 'gameofthrones/:id',
     component: EpisodeComponent
   },
+  {
+    path: 'seasons',
+    component: SeasonsComponent
+  },
 
 ];
 @NgModule({
   declarations: [
-    AppComponent, EpisodesComponent, EpisodeComponent, HomeComponent, NavComponent
+    AppComponent, EpisodesComponent, EpisodeComponent, HomeComponent, NavComponent, SeasonsComponent
   ],
   imports: [
     BrowserModule,

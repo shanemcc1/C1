@@ -74,26 +74,38 @@ export class WebService{
   }
 
   postEpisode(episode){
-    let postEpisodeData = new FormData();
-    console.log('episode name');
-    console.log(episode);
+    let postData = new FormData();
+    postData.append('name', episode.name);
+    postData.append('season', episode.season);
+    postData.append('episode', episode.episode);
+    postData.append('airdate', episode.airdate);
+    postData.append('summary', episode.summary);
+    postData.append('reviews', episode.reviews);
+    postData.append('imbd_rating', episode.imbd_rating);
+    postData.append('imbd_url', episode.imbd_url);
+    postData.append('image', episode.image);
 
-    postEpisodeData.append('name', episode.name);
-    postEpisodeData.append('season', episode.season);
-    postEpisodeData.append('episode', episode.episode);
-    postEpisodeData.append('airdate', episode.airdate);
-    postEpisodeData.append('summary', episode.summary);
-    postEpisodeData.append('reviews', episode.reviews);
-    postEpisodeData.append('imbd_rating', episode.imbd_rating);
-    postEpisodeData.append('imbd_url', episode.imbd_url);
-    postEpisodeData.append('image', episode.image);
-    console.log('postdata');
-    console.log(postEpisodeData);
-
-    this.http.post('http://localhost:5000/api/v1.0/gameofthrones', postEpisodeData).subscribe(
+    this.http.post('http://localhost:5000/api/v1.0/gameofthrones', postData).subscribe(
       response => {
         this.getEpisodes(1, 10);
       }
     );
   }
+
+    postSeason(season){
+    let postData = new FormData();
+    postData.append('season_number', season.season_number);
+    postData.append('season_description', season.season_description);
+    postData.append('season_rating', season.season_rating);
+    postData.append('season_image', season.season_image);
+    console.log(postData);
+    console.log('yeye');
+    console.log(season);
+    this.http.post('http://localhost:5000/api/v1.0/gameofthrones/seasons', postData).subscribe(
+      response => {
+        this.getSeasons(1, 10);
+      }
+    );
+  }
 }
+

@@ -17,11 +17,11 @@ export class HomeComponent {
   page_size = 10;
   dropdownlabel = 1;
 
-  season_number = 1;
+  season = 1;
   season_page_size = 8;
 
   ngOnInit() {
     this.webService.getEpisodes(this.page, this.page_size);
-    this.webService.getSeasons(this.season_number, this.season_page_size);
+    this.webService.getSeasons(this.season, this.season_page_size);
   }
 }
