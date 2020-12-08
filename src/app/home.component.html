@@ -34,17 +34,19 @@
             *ngIf="authService.loggedIn">
     Log Out
     </button>
-    <button class="btn bg-dark font-color"
+    <button class="btn bg-dark font-color mb-4"
             (click)="authService.login()"
             *ngIf="!authService.loggedIn">
       Log in
     </button>
-
-    <button class="btn bg-primary font-color"
-            (click)="authService.login()">
-      View all episodes
+    <button class="btn bg-dark font-color ml-3 mb-4"
+            (click)="goToSeasons()">View Seasons
+    </button>
+    <button class="btn bg-dark font-color ml-3 mb-4"
+            (click)="goToEpisodes()">View Episodes
     </button>
   </div>
   </div>
+
 </body>
 
