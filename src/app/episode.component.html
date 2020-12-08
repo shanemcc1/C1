@@ -13,7 +13,7 @@
              <h1 class="large-font">Summary</h1>
             </div>
               <div class="ml-3">
-             <span>{{episode.summary}}</span>
+             <span class="spantext">{{episode.summary}}</span>
             </div>
               </div>
           </div>
@@ -41,7 +41,7 @@
 
 
 <h1>Reviews </h1>
-<div class="container font-color" >
+<div class="container text-dark" >
   <div class="row">
     <div class="col-sm-12">
       <div class="card bg-light mb-3" *ngFor = "let review of webService.reviews_list | async ">
