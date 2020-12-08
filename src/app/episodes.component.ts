@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { WebService } from './web.service';
 import { AuthService} from './auth.service';
-import {ActivatedRoute} from "@angular/router";
-import {FormBuilder, Validators} from "@angular/forms";
+import {ActivatedRoute} from '@angular/router';
+import {FormBuilder, Validators} from '@angular/forms';
 
 
 @Component({
@@ -20,6 +20,15 @@ export class EpisodesComponent {
   season_page_size = 1;
 
   episodeForm;
+
+  div1 = false;
+  add_episode_button = true;
+
+  // tslint:disable-next-line:typedef
+  div1Function(){
+        this.div1 = true;
+        this.add_episode_button = false;
+    }
 
   constructor(public formBuilder: FormBuilder, public webService: WebService, public authService: AuthService) {
     this.episodeForm = formBuilder.group({
@@ -75,3 +84,4 @@ export class EpisodesComponent {
   }
 
 }
+
