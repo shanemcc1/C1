@@ -1,5 +1,5 @@
 <div class ="container dark-font noborder" style="margin-top: 50px">
-  <div class = "row  background noborder">
+  <div class = "row background noborder mb-5">
     <div class>
         <div class="col-12 mb-1 background noborder" *ngFor="let episode of webService.episode | async">
           <div class = "card  mb-3 background noborder">
@@ -38,7 +38,8 @@
       </div>
   </div>
 
-<hr/>
+<hr class="hr2"/>
+
 <div class="container text-dark mb-5" >
   <h1>Reviews</h1>
   <div class="row">
@@ -58,14 +59,11 @@
   </div>
 </div>
 <hr/>
-
-<div class="container mt-2 font-color" *ngIf="authService.loggedIn">
-  <div class="row">
-    <div class="col-sm-12 bg-dark">
-      <h2>
-        Leave a review for this episode
-      </h2>
-      <form [formGroup] = "reviewForm" (ngSubmit)= "onSubmit()">
+  <h1>Leave a review for this episode</h1>
+<div class="container mt-2 dark-font" *ngIf="authService.loggedIn">
+  <div class="row mt-2">
+    <div class="col-sm-12 background">
+      <form class="mt-4 mb-4" [formGroup] = "reviewForm" (ngSubmit)= "onSubmit()">
         <div class="form-group">
           <label for="username">Name</label>
           <input type="text" id="username" name="username" class="form-control" formControlName="username"
