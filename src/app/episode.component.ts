@@ -17,6 +17,11 @@ export class EpisodeComponent {
   div1 = false;
   add_review_button = true;
 
+   episode_id = this.webService.getEpisode(this.route.snapshot.params.id);
+   review_id = this.webService.getReviews(this.route.snapshot.params.id);
+
+   review_id_2;
+
   // tslint:disable-next-line:typedef
   div1Function(){
     this.div1 = true;
@@ -34,9 +39,16 @@ export class EpisodeComponent {
     });
   }
 
+  onDelete(review_id)
+  {
+    this.webService.deleteReview(review_id);
+  }
+
+
   ngOnInit() {
     this.webService.getEpisode(this.route.snapshot.params.id);
     this.webService.getReviews(this.route.snapshot.params.id);
+
   }
 
   onSubmit(){

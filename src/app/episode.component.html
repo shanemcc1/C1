@@ -54,9 +54,15 @@
         <div class="card-body">
           {{review.comment}}
         </div>
+        <div class="card-body">
+          <button class="bg-primary" type="button" (click)="onDelete(review._id)" (submit)="onDelete(review_id_2)">
+            DELETE
+          </button>
+        </div>
         <div class="card-footer">
           {{review.stars}} stars
         </div>
+
         </div>
     </div>
   </div>

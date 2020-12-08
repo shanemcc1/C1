@@ -26,6 +26,8 @@ export class WebService{
 
   episodeID;
   seasonID;
+  reviewID;
+  deleteID;
 
 
   constructor(private http: HttpClient) {}
@@ -47,11 +49,25 @@ export class WebService{
     });
   }
 
+    deleteSeason(id)
+  {
+    return this.http.delete('http://localhost:5000/api/v1.0/gameofthrones/' + id).subscribe(response => {
+      console.log(response);
+    });
+  }
+
   getEpisodes(page, pagesize)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones?pn=' + page + '&ps=' + pagesize).subscribe(response => {
       this.episodes_private_list = response;
       this.episodesSubject.next(this.episodes_private_list);
+    });
+  }
+
+  deleteReview(review_id)
+  {
+    return this.http.delete('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews/' + review_id).subscribe(response => {
+      this.getReviews(this.episodeID);
     });
   }
 
@@ -68,6 +84,7 @@ export class WebService{
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id + '/reviews').subscribe(response => {
       this.reviews_private_list = response;
+      this.reviewID = id;
       this.reviewsSubject.next(this.reviews_private_list);
     });
   }
@@ -80,7 +97,9 @@ export class WebService{
 
     this.http.post('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews', postData).subscribe(
       response => {
+        console.log(';HEY');
         this.getReviews(this.episodeID);
+        console.log(this.episodeID);
       }
     );
   }
