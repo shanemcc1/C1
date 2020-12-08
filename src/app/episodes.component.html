@@ -28,14 +28,14 @@
     <button class="btn btn-dark dropdown-toggle mb-4" type="button" data-toggle="dropdown">Season <span>{{dropdownlabel}}</span>
    </button>
     <ul class="dropdown-menu">
-      <li><a (click)="season = 1; season_page_size = 1; page=1; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=1">Season 1</a></li>
-      <li><a (click)="season = 2; season_page_size = 1; page=2; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=2">Season 2</a></li>
-      <li><a (click)="season = 3; season_page_size = 1; page=3; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=3">Season 3</a></li>
-      <li><a (click)="season = 4; season_page_size = 1; page=4; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=4">Season 4</a></li>
-      <li><a (click)="season = 5; season_page_size = 1; page=5; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=5">Season 5</a></li>
-      <li><a (click)="season = 6; season_page_size = 1; page=6; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=6">Season 6</a></li>
-      <li><a (click)="season = 7; season_page_size = 1; page=7; page_size=7; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=7">Season 7</a></li>
-      <li><a (click)="season = 8; season_page_size = 1; page=8; page_size=6; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=8">Season 8</a></li>
+      <li><a (click)="season = 1; page=1; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=1">Season 1</a></li>
+      <li><a (click)="season = 2; page=2; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=2">Season 2</a></li>
+      <li><a (click)="season = 3; page=3; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=3">Season 3</a></li>
+      <li><a (click)="season = 4; page=4; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=4">Season 4</a></li>
+      <li><a (click)="season = 5; page=5; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=5">Season 5</a></li>
+      <li><a (click)="season = 6; page=6; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=6">Season 6</a></li>
+      <li><a (click)="season = 7; page=7; page_size=7; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=7">Season 7</a></li>
+      <li><a (click)="season = 8; page=8; page_size=6; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=8">Season 8</a></li>
     </ul>
   </div>
   <hr/>
