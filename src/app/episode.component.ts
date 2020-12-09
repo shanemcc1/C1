@@ -18,7 +18,8 @@ export class EpisodeComponent {
   div1 = false;
   div2 = false;
   add_review_button = true;
-  edit_review_button = true;
+  edit_button = true;
+  delete_button = true;
 
    episode_id = this.webService.getEpisode(this.route.snapshot.params.id);
    review_id = this.webService.getReviews(this.route.snapshot.params.id);
@@ -34,8 +35,25 @@ export class EpisodeComponent {
       // tslint:disable-next-line:typedef
   div2Function(){
     this.div2 = true;
-    this.edit_review_button = true;
+
+    this.delete_button = false;
+    this.edit_button = false;
     }
+
+          // tslint:disable-next-line:typedef
+  div3Function(){
+    this.delete_button = false;
+    this.edit_button = false;
+    }
+
+              // tslint:disable-next-line:typedef
+  div4Function(){
+    this.div2 = false;
+    this.delete_button = true;
+    this.edit_button = true;
+    }
+
+
 
   constructor(public webService: WebService,
               public route: ActivatedRoute,

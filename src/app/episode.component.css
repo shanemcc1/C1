@@ -31,8 +31,15 @@ hr {
 .dark-font{color: #383838}
 
 .btn-xl {
-    padding: 7.5px 15px;
+    padding: 7.5px 25px;
     font-size: 15px;
+    border-radius: 7.5px;
+}
+
+.btn-sm {
+    width: 60px;
+    padding: 6px 10px;
+    font-size: 12px;
     border-radius: 7.5px;
 }
 
