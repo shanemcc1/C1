@@ -43,6 +43,12 @@
 
 <hr class="hr2"/>
 
+
+
+
+
+
+
 <div class="container text-dark mb-5" >
   <h1>Reviews</h1>
   <div class="row">
@@ -55,9 +61,62 @@
           {{review.comment}}
         </div>
         <div class="card-body">
-          <button class="bg-primary" type="button" (click)="onDelete(review._id)" (submit)="onDelete(review_id_2)">
+          <button class="bg-danger text-white" type="button" (click)="onDelete(review._id)" (submit)="onDelete(review._id)">
             DELETE
           </button>
+          <button *ngIf="edit_review_button" type=button class="ml-3  bg-primary" (click)="div2Function()">Edit Review</button>
+          <H2>{{review._id}}</H2>
+          <button class="bg-primary ml-3" type="button" (click)="onEdit(review._id)" (submit)="onEdit(review._id)">
+            EDIT
+          </button>
+
+          <!------------------------------------ EDIT PAGE ----------------------->
+
+          <div  *ngIf="div2">
+<div class="container mt-2 dark-font mb-5" *ngIf="authService.loggedIn">
+  <h1 class="mb-5">Leave a review for this episode</h1>
+  <div class="row mt-2">
+    <div class="col-sm-12 background">
+      <form class="mt-4 mb-4" [formGroup] = "reviewUpdateForm" (ngSubmit)= "onEdit(review._id)">
+        <div class="form-group">
+          <label for="username">Updated Name</label>
+          <input type="text" id="username" name="username" class="form-control" formControlName="updated_username" placeholder="{{review.username}}"
+          [ngClass] = "{ 'error' : isInvalid('username')}">
+        </div>
+        <div class="form-group">
+          <label for="comment">Updated Please leave your review below</label>
+          <textarea id="comment" name="comment" class="form-control" formControlName="updated_comment" placeholder="{{review.comment}}"
+          [ngClass]= "{ 'error' : isInvalid('comment')}">
+          </textarea>
+        </div>
+        <div class="form-group">
+          <label for="stars">Updated Please provide a rating (5=best)</label>
+          <select type="text" id="stars" name="stars" class="form-control" formControlName="updated_stars">
+            <option value="1"> 1 Star</option>
+            <option value="2"> 2 Stars</option>
+            <option value="3"> 3 Stars</option>
+            <option value="4"> 4 Stars</option>
+            <option value="5"> 5 Stars</option>
+          </select>
+        </div>
+        <span class="mb-5" *ngIf="isIncomplete()">
+          You must complete all fields
+        </span>
+        <button type="submit" class="btn btn-primary font-color mb-5">Save</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
         </div>
         <div class="card-footer">
           {{review.stars}} stars
@@ -108,6 +167,10 @@
 
 <div class="container mt-2 dark-font mb-5 center" *ngIf="authService.loggedIn">
   <button *ngIf="add_review_button" class="  mt-4 btn-xl mb-5 font-color bg-dark" (click)="div1Function()">Add Review</button>
+</div>
+
+  <div class="container mt-2 dark-font mb-5 center" *ngIf="authService.loggedIn">
+  <button *ngIf="edit_review_button" class="  mt-4 btn-xl mb-5 font-color bg-dark" (click)="div2Function()">Edit Review</button>
 </div>
 
 <div class="container mb-4" *ngIf="!authService.loggedIn">

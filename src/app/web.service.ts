@@ -64,13 +64,6 @@ export class WebService{
     });
   }
 
-  deleteReview(review_id)
-  {
-    return this.http.delete('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews/' + review_id).subscribe(response => {
-      this.getReviews(this.episodeID);
-    });
-  }
-
   getEpisode(id)
   {
     return this.http.get('http://localhost:5000/api/v1.0/gameofthrones/' + id).subscribe(response => {
@@ -87,6 +80,33 @@ export class WebService{
       this.reviewID = id;
       this.reviewsSubject.next(this.reviews_private_list);
     });
+  }
+
+  deleteReview(review_id)
+  {
+    return this.http.delete('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews/' + review_id).subscribe(response => {
+      this.getReviews(this.episodeID);
+    });
+  }
+
+  editReview(review_id, review){
+    let postData = new FormData();
+    postData.append('username', review.updated_username);
+    postData.append('comment', review.updated_comment);
+    postData.append('stars', review.updated_stars);
+
+    console.log('STATE:');
+    console.log(review_id);
+    console.log(review);
+
+    this.http.put('http://localhost:5000/api/v1.0/gameofthrones/' + this.episodeID + '/reviews/' + review_id, postData).subscribe(
+      response => {
+        console.log('episodeID below');
+        this.getReviews(this.episodeID);
+        console.log('reviewID below');
+        console.log(review_id);
+      }
+    );
   }
 
   postReview(review){

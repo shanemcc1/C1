@@ -14,8 +14,11 @@ import { AuthService} from './auth.service';
 export class EpisodeComponent {
 
   reviewForm;
+  reviewUpdateForm;
   div1 = false;
+  div2 = false;
   add_review_button = true;
+  edit_review_button = true;
 
    episode_id = this.webService.getEpisode(this.route.snapshot.params.id);
    review_id = this.webService.getReviews(this.route.snapshot.params.id);
@@ -28,6 +31,12 @@ export class EpisodeComponent {
     this.add_review_button = false;
     }
 
+      // tslint:disable-next-line:typedef
+  div2Function(){
+    this.div2 = true;
+    this.edit_review_button = true;
+    }
+
   constructor(public webService: WebService,
               public route: ActivatedRoute,
               public formBuilder: FormBuilder,
@@ -37,6 +46,11 @@ export class EpisodeComponent {
       comment: ['', Validators.required],
       stars: 5
     });
+    this.reviewUpdateForm = formBuilder.group({
+      updated_username: [ '', Validators.required],
+      updated_comment: ['', Validators.required],
+      updated_stars: 5
+    });
   }
 
   onDelete(review_id)
@@ -44,12 +58,21 @@ export class EpisodeComponent {
     this.webService.deleteReview(review_id);
   }
 
+  onEdit(review_id)
+  {
+    console.log('LOKAAJIOJHQFHHI');
+    console.log(review_id);
+    console.log('above');
+    this.webService.editReview(review_id, this.reviewUpdateForm.value);
+  }
+
 
   ngOnInit() {
     this.webService.getEpisode(this.route.snapshot.params.id);
     this.webService.getReviews(this.route.snapshot.params.id);
-
   }
+
+
 
   onSubmit(){
     this.webService.postReview(this.reviewForm.value);
