@@ -59,18 +59,18 @@
         </div>
 
         <div class="card-footer" *ngIf="authService.loggedIn">
-          <button *ngIf="delete_button" class="bg-danger btn-sm font-color" type="button" (click)="onDelete(review._id)" (submit)="onDelete(review._id)">Delete</button>
-          <button *ngIf="edit_button" type=button class="ml-3 btn-sm bg-primary font-color" (click)="div2Function()">Edit</button>
+          <button *ngIf="edit_button" type=button class=" btn-sm bg-primary font-color" (click)="div2Function()">Edit</button>
+          <button *ngIf="delete_button" class="bg-danger ml-3 btn-sm font-color" type="button" (click)="onDelete(review._id)" (submit)="onDelete(review._id)">Delete</button>
+
 
 
           <!------------------------------------ EDIT PAGE ----------------------->
 
-          <div  *ngIf="div2">
-<div class="container mt-2 dark-font mb-5" *ngIf="authService.loggedIn">
-  <h1 class="mb-5">Update review for this episode</h1>
-  <div class="row mt-2">
-    <div class="col-sm-12 background">
-      <form class="mt-4 mb-4" [formGroup] = "reviewUpdateForm" (ngSubmit)= "onEdit(review._id)">
+<div *ngIf="div2">
+<div class="container dark-font mb-5" *ngIf="authService.loggedIn">
+  <div class="row =">
+    <div class="col-sm-11">
+      <form class="mt-4" [formGroup] = "reviewUpdateForm" (ngSubmit)= "onEdit(review._id)">
         <div class="form-group">
           <label for="username">Updated Name</label>
           <input type="text" id="username" name="username" class="form-control" formControlName="updated_username" placeholder="{{review.username}}"
@@ -92,20 +92,17 @@
             <option value="5"> 5 Stars</option>
           </select>
         </div>
-
         <button type="submit" class="btn-sm bg-primary font-color mr-4">Apply</button>
         <button type="submit" class="btn-sm bg-primary font-color" type="submit" (click)="div4Function()">Exit</button>
-
       </form>
     </div>
   </div>
 </div>
 </div>
-        </div>
-
-        </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </div>
 <hr/>
 
