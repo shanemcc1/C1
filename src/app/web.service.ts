@@ -160,5 +160,6 @@ export class WebService{
   }
 }
 
-/* https://image.tmdb.org/t/p/original/50l0vWylWvucHs0xh64yBAWYTcR.jpg */
+/* https://image.tmdb.org/t/p/original/50l0vWylWvucHs0xh64yBAWYTcR.jpg
+* https://www.pluggedin.com/wp-content/uploads/2020/01/GoT3_Large-1024x587.jpg*/
 
