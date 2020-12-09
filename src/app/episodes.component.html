@@ -20,7 +20,7 @@
   <img src="assets/img/8.png">
 </div>
 <div *ngIf="dropdownlabel===8">
-  <img src="../assets/img/8.png">
+  <img src="assets/img/9.png">
 </div>
 
 <div class ="container" style="margin-top: 30px">
@@ -38,6 +38,13 @@
       <li><a (click)="season = 8; page=8; page_size=10; webService.getEpisodes(page, page_size); webService.getSeasons(season, season_page_size); dropdownlabel=8">Season 8</a></li>
     </ul>
   </div>
+
+
+
+
+
+
+
   <hr/>
 
   <h1>Season {{season}}</h1>
